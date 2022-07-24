@@ -72,4 +72,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="@dimen/_10sdp"/>
 
+    <TextView
+        android:id="@+id/cycleCounterTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cycle : "
+        android:textSize="@dimen/_20ssp"
+        android:textColor="@color/green"
+        app:layout_constraintTop_toBottomOf="@+id/stopTimerButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_25sdp"
+        android:textStyle="bold"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

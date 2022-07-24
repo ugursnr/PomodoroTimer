@@ -8,11 +8,11 @@ import androidx.core.content.ContextCompat
 import com.ugurrsnr.pomodorotimer.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding : ActivityMainBinding
     private var workingTimer : CountDownTimer? = null
     private var breakTimer : CountDownTimer? = null
-
-
+    private var cycleCounter : Int = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -80,6 +80,8 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFinish() {
                 startWorkingTimer()
+                cycleCounter ++
+                binding.cycleCounterTV.text =" Cycle : $cycleCounter"
             }
 
         }.start()
