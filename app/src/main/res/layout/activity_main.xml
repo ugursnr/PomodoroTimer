@@ -23,7 +23,7 @@
         android:id="@+id/currentStateTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Working Time!"
+        android:text="Start the Timer"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="@dimen/_24ssp"
