@@ -20,6 +20,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.startTimerButton.setOnClickListener {
+            workingTimer?.let {
+                it.cancel()
+            }
+            breakTimer?.let {
+                it.cancel()
+            }
             startWorkingTimer()
         }
 
@@ -30,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             breakTimer?.let {
                 it.cancel()
             }
+            binding.timerTV.text ="25:00"
         }
     }
 
@@ -45,7 +52,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onTick(millisUntilFinished: Long) {
                     val timeResult =
                         "${(millisUntilFinished / 1000 / 60).toString().padStart(2, '0')}:" +
-                                "${(millisUntilFinished / 1000 % 60).toString().padStart(2, '0')} "
+                                "${(millisUntilFinished / 1000 % 60).toString().padStart(2, '0')}"
 
                     binding.timerTV.apply {
                         setTextColor(redColor.toString().toInt())
@@ -70,7 +77,7 @@ class MainActivity : AppCompatActivity() {
             override fun onTick(millisUntilFinished: Long) {
                 val timeResult =
                     "${(millisUntilFinished / 1000 / 60).toString().padStart(2, '0')}:" +
-                            "${(millisUntilFinished / 1000 % 60).toString().padStart(2, '0')} "
+                            "${(millisUntilFinished / 1000 % 60).toString().padStart(2, '0')}"
 
                 binding.timerTV.apply {
                     setTextColor(greenColor.toString().toInt())
